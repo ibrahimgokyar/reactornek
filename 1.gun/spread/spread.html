@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="basicSpread()" >Basit Spread</button>
+     <button onclick="arrayKopyala()">Array Kopyala</button>
+    <button onclick="objeKopyalama()">Obje Kopyala</button>
+    <button onclick="diziBirlestir()">Dizi Birleştir</button>
+  <button onclick="objeleriBirlestir()">Obje Birleştir</button>
+  <button onclick="NElemanliOrnek()">N Elemanlı Örnek</button>"
+    <script>
+
+  function basicSpread() {
+    const meyveler = ['Elma','portakal','mandalina'];
+    console.log(...meyveler);
+  }
+
+  function arrayKopyala() {
+    let meyveler = ['Elma','portakal','mandalina'];
+    let meyveler_copy = [...meyveler];
+    console.log(meyveler_copy);
+    meyveler.push('çilek');
+    console.log(meyveler_copy);
+    console.log(meyveler);
+  }
+
+  function objeKopyalama() {
+
+    const user = {
+        name : "ibrahim",
+        surname : "gökyar"
+    }
+
+    const userCopy = {...user}
+    console.log(userCopy)
+    user.age = 35;
+    console.log(userCopy);
+  }
+
+  function diziBirlestir( ) {
+    const erkekIsimleri = ['Hakan','Mehmet']
+    const kadinIsimleri = ['Merve','Handan']
+
+    const tumIsimler = [...erkekIsimleri,...kadinIsimleri]
+    console.log(tumIsimler);
+
+  }
+
+  function objeleriBirlestir() {
+    const user = {
+        name :"ibrahim",
+        surname :"gökyar"
+    }
+
+    const evcilHayvanlar = {
+        pets : {
+            kopek : "Asdf",
+            kediler : ['Tekir','Pamuk','Boncuk']
+        }
+    }
+      const userDetay = {...user,...evcilHayvanlar}
+      console.log(userDetay);
+  }
+
+  function kareAl(...numbers)
+  {
+    return numbers.map(sayi => sayi* sayi);
+  }
+
+  function NElemanliOrnek() {
+    console.log(kareAl(2,3,4,5,7,11,13,15,25,30));
+  }
+    </script>
+</body>
+</html>
